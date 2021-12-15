@@ -2,7 +2,11 @@
   "name": "starter-react-vite-ts",
   "version": "0.0.0",
   "scripts": {
+    "prepare": "husky install",
     "dev": "vite",
+    "lint": "eslint ./src/**/*.{tsx,ts}",
+    "lint:prettier": "prettier --check .",
+    "lint-staged": "lint-staged",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
@@ -13,8 +17,26 @@
   "devDependencies": {
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
     "@vitejs/plugin-react": "^1.0.7",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.0",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.5.1",
     "typescript": "^4.4.4",
     "vite": "^2.7.2"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint ./src/**/*.{tsx,ts} --quiet --fix",
+      "prettier --write ."
+    ]
   }
 }

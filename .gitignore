@@ -3,3 +3,10 @@ node_modules
 dist
 dist-ssr
 *.local
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
